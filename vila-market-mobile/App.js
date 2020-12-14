@@ -6,7 +6,8 @@ import {
   TouchableHighlight, 
   View,
   Image,
-  Dimensions
+  Dimensions,
+  ScrollView
  } from 'react-native';
 import { render } from 'react-dom';
 
@@ -28,8 +29,12 @@ export default class App extends Component {
           <Text>React Native - CES-26</Text>
           <Text>Grupo HSO - Turma 22</Text>
         </View>
-        <Visor category={this.state.category} ></Visor>
-        <View style={styles.buttons}>
+        <ScrollView style={styles.scrollView}>
+        <Visor category={this.state.category} >
+        
+        </Visor>
+        </ScrollView>
+        <View style={styles.buttons}>        
           <Botao source={require('./images/food.png')} name='food' onClick={this.changeCategory}/>
           <Botao source={require('./images/home.png')} name='home'/>
           <Botao source={require('./images/electronics.png')} name='electronics'/>

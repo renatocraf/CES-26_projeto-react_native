@@ -5,7 +5,8 @@ import {
   Text,
   TouchableHighlight, 
   View,
-  Image
+  Image,
+  Dimensions
  } from 'react-native';
 import { render } from 'react-dom';
 
@@ -28,10 +29,10 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-          <Text style={styles.texto} >Lista 07 - CES-26</Text>
+          <Text style={styles.texto} >React Native - CES-26</Text>
           <Text>Grupo HSO - Turma 22</Text>
         </View>
-        <Visor></Visor>
+        <Visor style={styles.visor} value = 'TESTe' > </Visor>
         <View style={styles.buttons}>
           <Botao source={require('./images/food.png')} />
           <Botao source={require('./images/home.png')} />
@@ -53,19 +54,19 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFE4C4',
+    backgroundColor: '#FF8C00',
   },
   header: {
     alignItems: 'center',
     marginTop: 30,
   },
-  buttons: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+  buttons: {    
+    flexDirection: 'row',  
+    justifyContent: 'space-between',
 
   },
-  texto: {
-    fontSize: 30,
+  visor: {
+    fontSize: 30,   
   }
 
 });

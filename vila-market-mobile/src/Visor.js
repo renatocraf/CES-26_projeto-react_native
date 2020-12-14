@@ -9,24 +9,23 @@ import {
 
 const styles = StyleSheet.create({
     display: {
-        width: Dimensions.get('window').width ,
-        flex: 1,
-        padding: 20,
+        flex: 10,
         justifyContent: 'center',
-        backgroundColor: '#CDCDC1',
-        alignItems: 'flex-end',
-        borderColor: 'black',
+        backgroundColor: '#C0C0C0', 
         borderRadius: 20,
-        alignItems:'center'
+        justifyContent: 'space-between'
     },
     displayValue: {
         fontSize: 50,
         color: 'black',
+        
     }
 })
 
 export default props => 
     <View style={styles.display}>
         <Text style={styles.displayValue}
-            numberOfLines={1}>{props.value}</Text>
+            numberOfLines={1}>
+                {props.value}
+                </Text>
     </View>

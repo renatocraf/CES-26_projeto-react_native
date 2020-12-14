@@ -4,12 +4,13 @@ import {
     Text,
     Image,
     Dimensions,
-    TouchableHighlight
+    TouchableHighlight,
+    ImagePropTypes
 } from 'react-native'
 
 const styles = StyleSheet.create({
 
-    dimensao: {        
+    dimension: {        
         height: Dimensions.get('window').width  * 5/36,
         width: Dimensions.get('window').width   * 5/36,
         
@@ -20,12 +21,11 @@ const styles = StyleSheet.create({
 
 export default props => {    
     return (
-        <TouchableHighlight onPress={() => props.onClick(props.label)}>            
+        <TouchableHighlight onPress={() => props.onClick(props.name)} >            
             <Image 
                 source={props.source}
-                style={styles.dimensao}
-                 
-                />
+                style={styles.dimension}
+            />
         </TouchableHighlight>
     )
 }

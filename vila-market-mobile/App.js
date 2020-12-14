@@ -12,35 +12,30 @@ import { render } from 'react-dom';
 
 import Botao from './src/Botao';
 import Visor from './src/Visor';
-
-export const initialState= {
-  
-  operou:true
-}
-
+const initialState = { category: 'None' }
 
 export default class App extends Component {
   state = { ...initialState };
 
-  teste='../images/food.png'
-
+  changeCategory = new_category => {
+    this.setState({category: new_category})
+  }
 
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-          <Text style={styles.texto} >React Native - CES-26</Text>
+          <Text>React Native - CES-26</Text>
           <Text>Grupo HSO - Turma 22</Text>
         </View>
-        <Visor style={styles.visor} value = 'TESTe' > </Visor>
+        <Visor category={this.state.category} ></Visor>
         <View style={styles.buttons}>
-          <Botao source={require('./images/food.png')} />
-          <Botao source={require('./images/home.png')} />
-          <Botao source={require('./images/electronics.png')} />
-          <Botao source={require('./images/service.png')} />
-          <Botao source={require('./images/sports.png')} />
-          <Botao source={require('./images/dressing.png')} />
-
+          <Botao source={require('./images/food.png')} name='food' onClick={this.changeCategory}/>
+          <Botao source={require('./images/home.png')} name='home'/>
+          <Botao source={require('./images/electronics.png')} name='electronics'/>
+          <Botao source={require('./images/service.png')} name='service'/>
+          <Botao source={require('./images/sports.png')} name='sports'/>
+          <Botao source={require('./images/dressing.png')} name='dressing'/>
         </View>
       </View>
     );
@@ -64,9 +59,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',  
     justifyContent: 'space-between',
 
-  },
-  visor: {
-    fontSize: 30,   
   }
 
 });

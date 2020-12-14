@@ -31,11 +31,11 @@ export default class App extends Component {
         <Visor category={this.state.category} ></Visor>
         <View style={styles.buttons}>
           <Botao source={require('./images/food.png')} name='food' onClick={this.changeCategory}/>
-          <Botao source={require('./images/home.png')} name='home'/>
-          <Botao source={require('./images/electronics.png')} name='electronics'/>
-          <Botao source={require('./images/service.png')} name='service'/>
-          <Botao source={require('./images/sports.png')} name='sports'/>
-          <Botao source={require('./images/dressing.png')} name='dressing'/>
+          <Botao source={require('./images/home.png')} name='home' onClick={this.changeCategory}/>
+          <Botao source={require('./images/electronics.png')} name='electronics' onClick={this.changeCategory}/>
+          <Botao source={require('./images/service.png')} name='service' onClick={this.changeCategory}/>
+          <Botao source={require('./images/sports.png')} name='sports' onClick={this.changeCategory}/>
+          <Botao source={require('./images/dressing.png')} name='dressing' onClick={this.changeCategory}/>
         </View>
       </View>
     );

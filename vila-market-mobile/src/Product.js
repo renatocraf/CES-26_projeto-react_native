@@ -3,6 +3,7 @@ import {
     StyleSheet,
     Text,
     View,
+    Image,
 } from 'react-native'
 
 
@@ -21,6 +22,7 @@ const styles = StyleSheet.create({
 
 export default props => 
     <View style={styles.display}>
+        <Image source={props.image} />
         <Text style={styles.displayValue}>{props.name}</Text>
         <Text style={styles.displayValue}>{props.price}</Text>
         <Text style={styles.displayValue}>{props.description}</Text>
